@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Electron</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+  </head>
+  <body ng-app="firstApp">
+    <div class="row">
+      <div class="left-menu-pane">
+          <div ng-include="'templates/leftmenu.html'"></div>
+      </div>
+      <div class="content-pane" ui-view></div>
+    </div>
+  </body>
+  <script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+    require('./node_modules/electron-open-link-in-browser/build/electron-open-link-in-browser.js')
+    require('./node_modules/angular/angular.js')
+    require('./node_modules/angular-route/angular-route.js')
+    require('./node_modules/angular-ui-router/release/angular-ui-router.js')
+    require('./assets/js/app.js')
+    require('./assets/js/controllers/home.controller.js')
+  </script>
+</html>
